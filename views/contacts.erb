@@ -1,0 +1,13 @@
+<h1>Contacts</h1>
+
+<ul>
+  <% @contacts.each do |contact| %>
+    <li>
+      Full Name: <%= contact.full_name %>
+      Email: <%= contact.email %>
+      Notes: <%= contact.note %>
+    </li>
+  <% end %>
+</ul>
+
+<a href="<%=@home_page%>">Home Page</a>
