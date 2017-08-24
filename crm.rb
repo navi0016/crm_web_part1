@@ -23,10 +23,18 @@ get '/about_me' do
 end
 
 get '/contacts/:id' do
+  @home_page = '/'
+  @about_me_page = '/about_me'
+  @contacts_page = '/contacts'
   @contact = Contact.find_by({id: params[:id].to_i})
-  erb :show_contact
 
+  if @contact
+    erb :show_contact
+  else
+    raise Sinatra::NotFound
+  end
 end
+
 
 after do
   ActiveRecord::Base.connection.close
