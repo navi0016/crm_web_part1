@@ -22,6 +22,12 @@ get '/about_me' do
   erb :about_me
 end
 
+get '/contacts/:id' do
+
+  erb :show_contact
+
+end
+
 after do
   ActiveRecord::Base.connection.close
 end
