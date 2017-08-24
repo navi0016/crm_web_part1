@@ -10,7 +10,9 @@ end
 
 get '/contacts' do
   @contacts = Contact.all
+  @size = Contact.all.size
   @home_page = '/'
+  @about_me_page = '/about_me'
   erb :contacts
 end
 

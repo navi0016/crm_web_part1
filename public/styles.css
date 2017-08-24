@@ -1,0 +1,65 @@
+/* From: tinyurl.com/yawkqfm2 */
+
+body {
+  margin: 0px;
+  font-family: Arial, Helvetica;
+  line-height: 2.5;
+}
+
+header {
+  color: black;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 60px;
+  font-size: 36px;
+  font-weight: bolder;
+}
+
+h1 {
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 18px;
+}
+
+
+main {
+  color: white;
+  text-align: center;
+  margin-top: 60px;
+
+}
+
+.menu {
+  display: grid;
+  background-color: gainsboro;
+  margin: 3px;
+}
+
+p {
+  margin:1em;
+  display: block;
+  background-color: red
+}
+span {
+  text:center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+ul {
+  padding: 1em;
+}
+
+li {
+  display: block;
+  background-color: darkgray;
+  margin: 16px;
+}
+
+nav {
+  text-align: center;
+  color: white;
+  background-color: black;
+  padding: 18px;
+}
