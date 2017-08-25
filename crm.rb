@@ -26,6 +26,11 @@ get '/contacts/new' do
   erb :new
 end
 
+post '/contacts' do
+  Contact.create(first_name: params[:first_name],last_name: params[:last_name],email: params[:email],note: params[:note])
+  redirect to('/contacts')
+end
+
 get '/contacts/:id' do
   @home_page = '/'
   @about_me_page = '/about_me'
