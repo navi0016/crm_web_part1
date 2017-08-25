@@ -22,6 +22,10 @@ get '/about_me' do
   erb :about_me
 end
 
+get '/contacts/new' do
+  erb :new
+end
+
 get '/contacts/:id' do
   @home_page = '/'
   @about_me_page = '/about_me'
@@ -34,6 +38,8 @@ get '/contacts/:id' do
     raise Sinatra::NotFound
   end
 end
+
+
 
 
 after do
