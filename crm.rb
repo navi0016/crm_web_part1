@@ -45,6 +45,9 @@ get '/contacts/:id' do
 end
 
 get '/contact/:id/edit' do
+  @home_page = '/'
+  @about_me_page = '/about_me'
+  @contacts_page = '/contacts'
     @contact = Contact.find_by({id: params[:id].to_i})
     if @contact
       erb :edit_contact
@@ -54,9 +57,13 @@ get '/contact/:id/edit' do
 end
 
 put '/contacts/:id' do
+  @home_page = '/'
+  @about_me_page = '/about_me'
+  @contacts_page = '/contacts'
+
   @contact = Contact.find_by(id: params[:id].to_i)
-  if @contact
-    @contact.update(
+    if @contact
+      @contact.update(
     first_name: params[:first_name],
     last_name:  params[:last_name],
     email:      params[:email],
@@ -64,21 +71,26 @@ put '/contacts/:id' do
     )
 
     redirect to('/contacts')
-  else
+    else
     raise Sinatra::NotFound
-  end
+    end
 end
 
 
 
 delete '/contacts/:id' do
+  @home_page = '/'
+  @about_me_page = '/about_me'
+  @contacts_page = '/contacts'
+
   @contact = Contact.find(params[:id].to_i)
-  if @contact
+
+    if @contact
     @contact.delete
     redirect to('/contacts')
-  else
+    else
     raise Sinatra::NotFound
-  end
+    end
 end
 
 
