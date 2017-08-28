@@ -30,6 +30,10 @@ post '/contacts' do
   Contact.create(first_name: params[:first_name],last_name: params[:last_name],email: params[:email],note: params[:note])
   redirect to('/contacts')
 end
+get '/contacts/search' do
+  @contacts = Contact.where("LOWER(first_name)=?", params[:search].downcase)
+  erb :search
+end
 
 get '/contacts/:id' do
   @home_page = '/'
@@ -43,6 +47,7 @@ get '/contacts/:id' do
     raise Sinatra::NotFound
   end
 end
+
 
 get '/contact/:id/edit' do
   @home_page = '/'

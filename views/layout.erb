@@ -7,6 +7,14 @@
   </head>
   <body>
     <%= yield %>
+
+    <section>
+      <form action='/contacts/search' method="get">
+        <input type="text" name="search" value="">
+        <input type="button" value="Search">
+      </form>
+    </section>
+
     <main>
       <div>
         <ul>
