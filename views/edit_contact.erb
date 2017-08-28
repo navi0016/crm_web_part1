@@ -6,5 +6,11 @@
   <input type='text' name='last_name' value='<%= @contact.last_name %>'>
   <input type='text' name='email' value='<%= @contact.email %>'>
   <input type='text' name='note' value='<%= @contact.note %>'>
+  Active:
+  <%if @contact.status%>
+  <input type="checkbox" name="status" checked>
+  <%else%>
+  <input type="checkbox" name="status" >
+  <%end%>
   <input type='submit' value='Edit Contact'>
 </form>

@@ -68,11 +68,18 @@ put '/contacts/:id' do
 
   @contact = Contact.find_by(id: params[:id].to_i)
     if @contact
+
+      if params[:status] == 'on'
+         @status=true
+       else
+         @status=false
+       end
       @contact.update(
     first_name: params[:first_name],
     last_name:  params[:last_name],
     email:      params[:email],
-    note:       params[:note]
+    note:       params[:note],
+    status:     @status
     )
 
     redirect to('/contacts')

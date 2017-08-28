@@ -1,6 +1,7 @@
 gem 'activerecord', '=4.2.7'
 require 'active_record'
 require 'mini_record'
+require 'date'
 
 ActiveRecord::Base.establish_connection(adapter: 'sqlite3', database: 'crm-ar.sqlite3')
 
@@ -11,6 +12,8 @@ class Contact < ActiveRecord::Base
   field :last_name,  as: :string
   field :email,      as: :string
   field :note,       as: :text
+  field :created_at,  as: :date ,default: Date.today
+  field :status,      as: :boolean, default: true
 
   def full_name
    "#{ first_name } #{ last_name }"
